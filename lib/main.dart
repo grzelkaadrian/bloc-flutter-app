@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import './models/json.dart';
 
@@ -75,7 +76,7 @@ class _BodyWidgetState extends State<BodyWidget> {
           } else if (snapshot.hasError) {
             return Text('${snapshot.error}');
           } else {
-            return const Text('');
+            return const CircularProgressIndicator();
           }
         },
       ),
